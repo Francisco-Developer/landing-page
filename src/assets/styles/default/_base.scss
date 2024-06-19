@@ -1,0 +1,36 @@
+@use 'abstract/index' as *;
+
+body {
+	width: 100%;
+	font-family: $font-family;
+	font-size: $text-size-large;
+	color: $color-text;
+	background: $color-background;
+	position: relative;
+	@media (max-width: 768px) {
+		font-size: $text-size-small;
+	}
+}
+
+.container {
+	max-width: $max-width;
+	padding: 4rem 1rem;
+	margin: 0 auto;
+	position: relative;
+	z-index: 5;
+	overflow: hidden;
+	@media ($mq-small) {
+		padding: 2rem 1rem;
+	}
+}
+.btn-primary {
+	background: $color-primary;
+	padding: 0.75rem 1.5rem;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 0.85rem;
+	&:hover {
+		background: darken($color-primary, 5);
+	}
+}

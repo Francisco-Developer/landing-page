@@ -1,0 +1,32 @@
+$color-primary: #ff9771;
+$color-secondary: #f1f1f1;
+
+$color-background: #1b1c20;
+$color-text: $color-secondary;
+$color-burger-btn: #fff;
+$color-hover: $color-primary;
+
+/* Fuentes */
+$font-family: 'Montserrat', sans-serif;
+$text-size-small: 14px;
+$text-size-large: 16px;
+$fs-body: $text-size-large;
+
+/* Max-Width */
+$max-width: 1024px;
+
+/* Bordes */
+$border-radius-small: 0.25rem;
+$border-radius-large: 1.25rem;
+
+/* Sombras */
+$shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-hard: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+/*Transitions*/
+$transition: all 0.3s ease;
+$transition-bezier: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0s;
+/*Querys*/
+$mq-small: 'max-width:576px';
+$mq-medium: 'max-width:768px';
+$mq-large: 'max-width:992px';

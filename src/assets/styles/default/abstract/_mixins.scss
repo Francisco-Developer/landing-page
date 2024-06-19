@@ -1,0 +1,54 @@
+@use 'variables' as *;
+@mixin poligon($d) {
+	$v: 45px;
+	&::before {
+		width: 100%;
+		height: calc(100% + $v * 2);
+		content: '';
+		position: absolute;
+		top: -$v;
+		left: 0;
+		background: #1b1c20;
+		z-index: -1;
+		overflow: hidden;
+		@if $d == 'left' {
+			clip-path: polygon(0 0, 100% $v, 100% calc(100% - $v), 0 100%);
+		}
+		@if $d == 'right' {
+			clip-path: polygon(0 $v, 100% 0, 100% 100%, 0 calc(100% - $v));
+		}
+		@if $d == 'footer' {
+			clip-path: polygon(0 0, 100% $v, 100% 100%, 0 100%);
+		}
+	}
+	&::after {
+		width: 300px;
+		height: 300px;
+		content: '';
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		background: $color-text;
+		border-radius: 50%;
+		filter: blur(180px);
+		opacity: 0.5;
+		display: none;
+	}
+}
+@mixin overlay($c, $w, $y) {
+	.overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 180px;
+		height: 180px;
+		transform: translate(-$w, -$y);
+		border-radius: 50%;
+		background-color: rgba($c, 0.6);
+		filter: blur(150px);
+		z-index: 2;
+		@media ($mq-medium) {
+			display: none;
+		}
+	}
+}

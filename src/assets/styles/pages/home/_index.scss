@@ -1,0 +1,244 @@
+@use '../../default/abstract/index' as *;
+
+/*SECTION HERO*/
+.hero {
+	width: 100%;
+	height: 100vh;
+	background: url('../../assets/images/hero.jpg') center top no-repeat;
+	background-size: cover;
+	position: relative;
+	&::before {
+		width: 100%;
+		height: 100%;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: rgba(black, 0.7);
+	}
+
+	&__content {
+		height: 100vh;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 1rem;
+	}
+	h3 {
+		font-size: 1.5rem;
+		font-weight: normal;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-weight: bold;
+		line-height: 1.25;
+		text-align: center;
+		color: $color-primary;
+	}
+
+	p {
+		margin: 1rem auto 2rem;
+		max-width: 700px;
+		text-align: center;
+	}
+	@media ($mq-medium) {
+		h3 {
+			font-size: 1.15rem;
+		}
+		h1 {
+			font-size: 2.5rem;
+		}
+	}
+	@media ($mq-small) {
+		h3 {
+			font-size: 1rem;
+		}
+		h1 {
+			font-size: 2rem;
+		}
+	}
+}
+/*SECTION SERVICES*/
+.services {
+	position: relative;
+	z-index: 1;
+	@include overlay($color-text, 200%, 60%);
+	@include poligon(left);
+}
+
+/*SECTION PORTFOLIO*/
+.portfolio {
+	position: relative;
+	@include overlay($color-primary, 50%, 50%);
+	@include poligon(right);
+	a {
+		margin-top: 1.2rem;
+		width: 100%;
+		color: white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		i {
+			font-size: 1.75rem;
+			margin-bottom: 0.25rem;
+		}
+		span {
+			text-decoration: underline;
+		}
+	}
+}
+
+/*SECTION PRICING*/
+.pricing {
+	position: relative;
+	@include overlay($color-text, -100%, 40%);
+	@include poligon(left);
+	&__content {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1rem;
+	}
+	.item {
+		display: flex;
+		flex-direction: column;
+		padding: 2rem 0;
+		border: 1px solid $color-text;
+		h3 {
+			background: lighten($color-background, 10);
+			text-align: center;
+			padding: 0.5rem 0;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		.text-pricing {
+			text-align: center;
+			padding: 1rem 0;
+			font-weight: bold;
+			font-size: 1.5rem;
+		}
+		.list {
+			padding: 1rem 2rem;
+			line-height: 2;
+			margin-bottom: 1rem;
+			height: 250px;
+			li {
+				list-style: circle;
+				font-size: 0.95rem;
+			}
+			@media ($mq-small) {
+				height: 200px;
+			}
+		}
+		a {
+			background: $color-primary;
+			text-align: center;
+			padding: 1rem;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 0.9rem;
+		}
+	}
+
+	.happy-clients {
+		width: 100%;
+		margin-top: 2rem;
+		h4 {
+			text-transform: uppercase;
+			width: 100%;
+			text-align: center;
+			font-size: 1.3rem;
+		}
+		.smille {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			span {
+				flex: 1;
+				height: 1px;
+				background: #808080;
+			}
+			div {
+				padding: 0 1rem;
+				font-size: 1.5rem;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+/*SECTION ABOUTS*/
+.abouts {
+	position: relative;
+	@include overlay($color-text, 50%, 50%);
+	@include poligon(right);
+}
+
+/*SECTION CONTACT*/
+.contact {
+	@include overlay($color-text, 200%, 50%);
+	position: relative;
+	@include poligon(footer);
+	h3 {
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 1.05rem;
+		margin-bottom: 1rem;
+		color: $color-primary;
+	}
+	&__content {
+		display: flex;
+		gap: 4rem;
+	}
+	&__form {
+		width: 50%;
+	}
+	&__info {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
+
+		a {
+			display: flex;
+			color: white;
+			text-transform: uppercase;
+			justify-content: flex-start;
+			align-items: center;
+			margin-bottom: 1rem;
+			i {
+				margin-right: 0.5rem;
+			}
+		}
+		.socials {
+			margin-top: 1rem;
+			div {
+				display: flex;
+				gap: 1rem;
+				a {
+					font-size: 1.5rem;
+					transition: $transition;
+					&:hover {
+						color: $color-primary;
+					}
+				}
+			}
+		}
+	}
+	@media ($mq-medium) {
+		&__content {
+			flex-direction: column;
+		}
+		&__form,
+		&__info {
+			width: 100%;
+		}
+	}
+}

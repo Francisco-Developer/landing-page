@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	list-style: none;
+	background: none;
+	border-width: initial;
+	border-style: none;
+	text-decoration: none;
+	color: inherit;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+img,
+picture,
+svg {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover;
+}
